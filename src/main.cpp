@@ -14,6 +14,16 @@ void OnProgramLoad(const char *pluginName, const char *mainFilePath)
     config = new Configuration();
 }
 
+void OnBombPlanted(Player *player, (site == SITE_A ? "A" : "B"))
+{
+    print("%s has planted the bomb!\n", player->GetName());
+}
+
+void OnBombDefused(Player *player, (site == SITE_A ? "A" : "B"))
+{
+    print("%s has defused the bomb!\n", player->GetName());
+}
+
 void OnPluginStart()
 {
 }
