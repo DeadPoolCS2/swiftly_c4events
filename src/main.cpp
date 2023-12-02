@@ -24,25 +24,15 @@ void OnPluginStart()
 {
 }
 
-void TimerCallback() { // credits to blu
-    g_playerManager->SendMsg(HUD_PRINTTALK, "Remaining time: %d seconds\n", elapsedTime);
-    print("Remaining time: %d seconds\n", elapsedTime);
-    print("UNIX Time: %llu\n", GetTime());
-    elapsedTime--;  // decrement elapsedTime.
-    if (elapsedTime == 0) {
-        timers->DestroyTimer(timerid);
-    }
-} //
-
 void OnBombPlanted(Player *player, unsigned short site)
 {
     g_playerManager->SendMsg(HUD_PRINTTALK, FetchTranslation("c4events.plant.message"), config->Fetch<const char*>("c4events.prefix"), player->GetName());
-    print("%s planted a bomb.\n", player->GetName()); // credits to blu
-    print("UNIX Time: %llu\n", GetTime());
     elapsedTime = server->cvars->GetConvarInt("mp_c4timer");
     timerid = timers->RegisterTimer(1000, TimerCallback);  
-    print("Timer registered.\n");
-    print("UNIX Time: %llu\n", GetTime()); //
+}
+
+void TimerCallback() { // credits to blu, modified by me
+    g_playerManager->SendMsg(HUD_PRINTCENTER, "Bomb will explode in: %d seconds", elapsedTime);
 }
 
 void OnBombDefused(Player *player, unsigned short site)
@@ -50,19 +40,14 @@ void OnBombDefused(Player *player, unsigned short site)
     g_playerManager->SendMsg(HUD_PRINTTALK, FetchTranslation("c4events.defuse.message"), config->Fetch<const char*>("c4events.prefix"), player->GetName());
 }
 
-void Timer() // credits to blu
+void OnPluginStop()
 {
-    print("There are %02d players on the server.\n", g_playerManager->GetPlayers());
+
 }
 
 const char *GetPluginName()
 {
     return "C4 Events Messages";
-}
-
-void OnPluginStop()
-{
-
 }
 
 const char *GetPluginAuthor()
