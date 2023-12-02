@@ -22,11 +22,12 @@ void OnProgramLoad(const char *pluginName, const char *mainFilePath)
  
 void OnPluginStart()
 {
+
 }
 
 void TimerCallback() { // credits to blu
-    g_playerManager->SendMsg(HUD_PRINTCENTER, "Remaining time: %d seconds\n", elapsedTime);
-    elapsedTime--;  // decrement elapsedTime.
+    g_playerManager->SendMsg(HUD_PRINTCENTER, FetchTranslation("c4events.countdown.message"), elapsedTime);
+    elapsedTime--;
     if (elapsedTime == 0) {
         timers->DestroyTimer(timerid);
     }
@@ -46,17 +47,17 @@ void OnBombDefused(Player *player, unsigned short site)
 
 void Timer() // credits to blu
 {
-    print("There are %02d players on the server.\n", g_playerManager->GetPlayers());
+
+} //
+
+void OnPluginStop()
+{
+
 }
 
 const char *GetPluginName()
 {
     return "C4 Events Messages";
-}
-
-void OnPluginStop()
-{
-
 }
 
 const char *GetPluginAuthor()
@@ -71,5 +72,5 @@ const char *GetPluginVersion()
 
 const char *GetPluginWebsite()
 {
-    return "https://discord.gg/ESKNDx2CNB";
+    return "https://github.com/moongetsu/swiftly_c4events";
 }
