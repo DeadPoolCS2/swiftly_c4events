@@ -13,7 +13,7 @@ void OnProgramLoad(const char *pluginName, const char *mainFilePath)
     server = new Server();
     config = new Configuration();
 }
-
+ 
 void OnBombPlanted(Player *player)
 {
     print("%s has planted the bomb!\n", player->GetName());
