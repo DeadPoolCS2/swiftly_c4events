@@ -24,9 +24,13 @@ void OnPluginStart()
 {
 }
 
-void TimerCallback() { // credits to blu, modified by me
-    g_playerManager->SendMsg(HUD_PRINTCENTER, "Bomb will explode in: %d seconds", elapsedTime);
-}
+void TimerCallback() { // credits to blu
+    g_playerManager->SendMsg(HUD_PRINTCENTER, "Remaining time: %d seconds\n", elapsedTime);
+    elapsedTime--;  // decrement elapsedTime.
+    if (elapsedTime == 0) {
+        timers->DestroyTimer(timerid);
+    }
+} //
 
 void OnBombPlanted(Player *player, unsigned short site)
 {
@@ -40,14 +44,19 @@ void OnBombDefused(Player *player, unsigned short site)
     g_playerManager->SendMsg(HUD_PRINTTALK, FetchTranslation("c4events.defuse.message"), config->Fetch<const char*>("c4events.prefix"), player->GetName());
 }
 
-void OnPluginStop()
+void Timer() // credits to blu
 {
-
+    print("There are %02d players on the server.\n", g_playerManager->GetPlayers());
 }
 
 const char *GetPluginName()
 {
     return "C4 Events Messages";
+}
+
+void OnPluginStop()
+{
+
 }
 
 const char *GetPluginAuthor()
