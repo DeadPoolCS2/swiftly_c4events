@@ -14,12 +14,12 @@ void OnProgramLoad(const char *pluginName, const char *mainFilePath)
     config = new Configuration();
 }
  
-void OnBombPlanted(Player *player)
+void OnBombPlanted(Player *player, unsigned short site)
 {
     print("%s has planted the bomb!\n", player->GetName());
 }
 
-void OnBombDefused(Player *player)
+void OnBombDefused(Player *player, unsigned short site)
 {
     print("%s has defused the bomb!\n", player->GetName());
 }
