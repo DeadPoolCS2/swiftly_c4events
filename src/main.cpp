@@ -62,7 +62,7 @@ const char *GetPluginName()
 
 void OnPluginStop()
 {
-    timers->UnregisterTimers();
+
 }
 
 const char *GetPluginAuthor()
