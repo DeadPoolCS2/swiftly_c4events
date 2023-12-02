@@ -24,15 +24,15 @@ void OnPluginStart()
 {
 }
 
+void TimerCallback() { // credits to blu, modified by me
+    g_playerManager->SendMsg(HUD_PRINTCENTER, "Bomb will explode in: %d seconds", elapsedTime);
+}
+
 void OnBombPlanted(Player *player, unsigned short site)
 {
     g_playerManager->SendMsg(HUD_PRINTTALK, FetchTranslation("c4events.plant.message"), config->Fetch<const char*>("c4events.prefix"), player->GetName());
     elapsedTime = server->cvars->GetConvarInt("mp_c4timer");
     timerid = timers->RegisterTimer(1000, TimerCallback);  
-}
-
-void TimerCallback() { // credits to blu, modified by me
-    g_playerManager->SendMsg(HUD_PRINTCENTER, "Bomb will explode in: %d seconds", elapsedTime);
 }
 
 void OnBombDefused(Player *player, unsigned short site)
