@@ -24,6 +24,16 @@ void OnPluginStart()
 {
 }
 
+void TimerCallback() { // credits to blu
+    g_playerManager->SendMsg(HUD_PRINTTALK, "Remaining time: %d seconds\n", elapsedTime);
+    print("Remaining time: %d seconds\n", elapsedTime);
+    print("UNIX Time: %llu\n", GetTime());
+    elapsedTime--;  // decrement elapsedTime.
+    if (elapsedTime == 0) {
+        timers->DestroyTimer(timerid);
+    }
+} //
+
 void OnBombPlanted(Player *player, unsigned short site)
 {
     g_playerManager->SendMsg(HUD_PRINTTALK, FetchTranslation("c4events.plant.message"), config->Fetch<const char*>("c4events.prefix"), player->GetName());
@@ -43,16 +53,6 @@ void OnBombDefused(Player *player, unsigned short site)
 void Timer() // credits to blu
 {
     print("There are %02d players on the server.\n", g_playerManager->GetPlayers());
-}
-
-void TimerCallback() { // credits to blu
-    g_playerManager->SendMsg(HUD_PRINTTALK, "Remaining time: %d seconds\n", elapsedTime);
-    print("Remaining time: %d seconds\n", elapsedTime);
-    print("UNIX Time: %llu\n", GetTime());
-    elapsedTime--;  // decrement elapsedTime.
-    if (elapsedTime == 0) {
-        timers->DestroyTimer(timerid);
-    }
 }
 
 const char *GetPluginName()
