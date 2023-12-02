@@ -27,6 +27,12 @@ void OnPluginStart()
 void OnBombPlanted(Player *player, unsigned short site)
 {
     g_playerManager->SendMsg(HUD_PRINTTALK, FetchTranslation("c4events.plant.message"), config->Fetch<const char*>("c4events.prefix"), player->GetName());
+    print("%s planted a bomb.\n", player->GetName()); // credits to blu
+    print("UNIX Time: %llu\n", GetTime());
+    elapsedTime = 10;
+    timerid = timers->RegisterTimer(1000, TimerCallback);  
+    print("Timer registered.\n");
+    print("UNIX Time: %llu\n", GetTime()); //
 }
 
 void OnBombDefused(Player *player, unsigned short site)
@@ -47,15 +53,6 @@ void TimerCallback() { // credits to blu
     if (elapsedTime == 0) {
         timers->DestroyTimer(timerid);
     }
-}
-
-void OnBombPlanted(Player *player, unsigned short site) {  // credits to blu
-    print("%s planted a bomb.\n", player->GetName());
-    print("UNIX Time: %llu\n", GetTime());
-    elapsedTime = 10;
-    timerid = timers->RegisterTimer(1000, TimerCallback);  
-    print("Timer registered.\n");
-    print("UNIX Time: %llu\n", GetTime());
 }
 
 const char *GetPluginName()
