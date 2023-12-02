@@ -16,12 +16,12 @@ void OnProgramLoad(const char *pluginName, const char *mainFilePath)
  
 void OnBombPlanted(Player *player, unsigned short site)
 {
-    print("%s has planted the bomb!\n", player->GetName());
+    player->SendMsg(HUD_PRINTTALK, "%s has planted the bomb!\n", player->GetName());
 }
 
 void OnBombDefused(Player *player, unsigned short site)
 {
-    print("%s has defused the bomb!\n", player->GetName());
+    player->SendMsg(HUD_PRINTTALK, "%s has defused the bomb!\n", player->GetName());
 }
 
 void OnPluginStart()
