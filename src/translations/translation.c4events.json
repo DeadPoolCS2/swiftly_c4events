@@ -1,0 +1,11 @@
+{
+    "plant.message": {
+        "en": "%s %s has planted the bomb!"
+    },
+    "defuse.message": {
+        "en": "%s %s has defused the bomb!"
+    },
+    "countdown.message": {
+        "en": "The C4 will explode in %d seconds"
+    }
+}
