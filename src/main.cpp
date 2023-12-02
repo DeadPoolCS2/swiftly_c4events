@@ -16,25 +16,17 @@ void OnProgramLoad(const char *pluginName, const char *mainFilePath)
  
 void OnBombPlanted(Player *player, unsigned short site)
 {
-    g_playerManager->SendMsg(HUD_PRINTTALK, "%s has planted the bomb!", player->GetName());
+    g_playerManager->SendMsg(HUD_PRINTTALK, FetchTranslation("c4events.plant.message"), config->Fetch<const char*>("c4events.prefix"), player->GetName());
 }
 
 void OnBombDefused(Player *player, unsigned short site)
 {
-    g_playerManager->SendMsg(HUD_PRINTTALK, "%s has defused the bomb!", player->GetName());
-}
-
-void OnPluginStart()
-{
-}
-
-void OnPluginStop()
-{
+    g_playerManager->SendMsg(HUD_PRINTTALK, FetchTranslation("c4events.defuse.message"), config->Fetch<const char*>("c4events.prefix"), player->GetName());
 }
 
 const char *GetPluginWebsite()
 {
-    return "";
+    return "https://discord.gg/ESKNDx2CNB";
 }
 
 const char *GetPluginAuthor()
