@@ -21,11 +21,11 @@
   </p>
 </p>
 
-![Downloads](https://img.shields.io/github/downloads/moongetsu/swiftly_c4events/total) ![Contributors](https://img.shields.io/github/contributors/moongetsu/swiftly_c4events?color=dark-green) ![Issues](https://img.shields.io/github/issues/moongetsu/swiftly_c4events) ![License](https://img.shields.io/github/license/moongetsu/swiftly_c4events) 
+[Downloads](https://img.shields.io/github/downloads/moongetsu/swiftly_c4events/total) ![Contributors](https://img.shields.io/github/contributors/moongetsu/swiftly_c4events?color=dark-green) ![Issues](https://img.shields.io/github/issues/moongetsu/swiftly_c4events) ![License](https://img.shields.io/github/license/moongetsu/swiftly_c4events) 
 
 ### Installation 👀
 
-1. Download the newest ![release](https://github.com/moongetsu/swiftly_c4events/releases).
+1. Download the newest [release](https://github.com/moongetsu/swiftly_c4events/releases).
 2. Everything is drag & drop, so i think you can do it!
 
 ### Configuring the plugin 🧐
@@ -41,4 +41,4 @@
 5. Open a Pull Request
 
 ### Have ideas? 💡
-Join ![Swiftly Discord Server](https://discord.gg/ESKNDx2CNB)!
+Join [Swiftly Discord Server](https://discord.gg/ESKNDx2CNB)!
