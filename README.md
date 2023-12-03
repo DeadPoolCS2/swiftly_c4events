@@ -21,7 +21,7 @@
   </p>
 </p>
 
-[Downloads](https://img.shields.io/github/downloads/moongetsu/swiftly_c4events/total) ![Contributors](https://img.shields.io/github/contributors/moongetsu/swiftly_c4events?color=dark-green) ![Issues](https://img.shields.io/github/issues/moongetsu/swiftly_c4events) ![License](https://img.shields.io/github/license/moongetsu/swiftly_c4events) 
+![Downloads](https://img.shields.io/github/downloads/moongetsu/swiftly_c4events/total) ![Contributors](https://img.shields.io/github/contributors/moongetsu/swiftly_c4events?color=dark-green) ![Issues](https://img.shields.io/github/issues/moongetsu/swiftly_c4events) ![License](https://img.shields.io/github/license/moongetsu/swiftly_c4events) 
 
 ### Installation 👀
 
