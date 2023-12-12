@@ -2,6 +2,7 @@
 #include <swiftly/server.h>
 #include <swiftly/configuration.h>
 #include <swiftly/timers.h>
+#include <swiftly/gameevents.h>
 
 Configuration *config = nullptr;
 Server *server = nullptr;
