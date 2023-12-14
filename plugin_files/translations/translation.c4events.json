@@ -1,0 +1,14 @@
+{
+    "plant.message": {
+        "en": "{lime}[Swiftly] %s {default}has {lime}planted {default}the bomb!",
+        "ro": "{lime}[Swiftly] %s {default}a {lime}plantat {default}bomba!"
+    },
+    "defuse.message": {
+        "en": "{lime}[Swiftly] %s {default}has {lime}defused {default}the bomb!",
+        "ro": "{lime}[Swiftly] %s {default}a dat {lime}defuse {default}la bomba!"
+    },
+    "countdown.message": {
+        "en": "The <font color='#00FF00'>C4</font> will explode in <font color='#00FF00'>%d</font> seconds",
+        "ro": "<font color='#00FF00'>Bomba</font> va exploda in <font color='#00FF00'>%d</font> secunde"
+    }
+}
