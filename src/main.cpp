@@ -34,8 +34,6 @@ void TimerCallback() { // credits to blu (made some modifications)
         g_playerManager->SendMsg(HUD_PRINTCENTER, FetchTranslation("c4events.countdown.message"), elapsedTime);
     }
 
-    elapsedTime--;
-
     if (elapsedTime == 0) {
         timers->DestroyTimer(timerid);
     }
