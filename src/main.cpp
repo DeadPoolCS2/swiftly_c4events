@@ -22,16 +22,13 @@ void OnProgramLoad(const char *pluginName, const char *mainFilePath)
 }
 
 void TimerCallback() { // credits to blu (made some modifications)
-    if (elapsedTime == 30) {
-        g_playerManager->SendMsg(HUD_PRINTTALK, FetchTranslation("c4events.secondschat.message"), elapsedTime);
-    }
-
-    if (elapsedTime == 20) {
+    if (elapsedTime == 30 || elapsedTime == 20) {
         g_playerManager->SendMsg(HUD_PRINTTALK, FetchTranslation("c4events.secondschat.message"), elapsedTime);
     }
 
     if (elapsedTime <= 10) {
         g_playerManager->SendMsg(HUD_PRINTCENTER, FetchTranslation("c4events.countdown.message"), elapsedTime);
+        print("Debug pentru 10 secunde (%d)", elapsedTime)
     }
 
     if (elapsedTime == 0) {
