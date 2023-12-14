@@ -31,6 +31,8 @@ void TimerCallback() { // credits to blu (made some modifications)
         print("Debug pentru 10 secunde (%d)", elapsedTime)
     }
 
+    elapsedTime--;
+
     if (elapsedTime == 0) {
         timers->DestroyTimer(timerid);
     }
