@@ -1,6 +1,6 @@
 CC_COMMAND = gcc
 CXX_COMMAND = g++
-PROJECT_NAME = swiftly_c4eventsnew
+PROJECT_NAME = swiftly_c4events
 
 CURRENT_PATH=$(realpath .)
 BEHIND_PATH=$(realpath ..)

@@ -7,9 +7,9 @@
         "en": "{lime}[Swiftly] %s {default}has {lime}defused {default}the bomb!",
         "ro": "{lime}[Swiftly] %s {default}a dat {lime}defuse {default}la bomba!"
     },
-    "secondschat": {
-        "en": "{lime}[Swiftly] The bomb will explode in {lime}%d {default}seconds!",
-        "ro": "{lime}[Swiftly] Bomba v-a exploda in {lime}%d de {default}secunde!"
+    "secondschat.message": {
+        "en": "{lime}[Swiftly] {default}The bomb will explode in {lime}%d {default}seconds!",
+        "ro": "{lime}[Swiftly] {default}Bomba v-a exploda in {lime}%d de {default}secunde!"
     },
     "countdown.message": {
         "en": "The <font color='#00FF00'>bomb</font> will explode in <font color='#00FF00'>%d</font> seconds",

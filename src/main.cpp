@@ -30,7 +30,7 @@ void TimerCallback() { // credits to blu (made some modifications)
         g_playerManager->SendMsg(HUD_PRINTTALK, FetchTranslation("c4events.secondschat.message"), elapsedTime);
     }
 
-    if (elapsedTime == 10) {
+    if (elapsedTime <= 10) {
         g_playerManager->SendMsg(HUD_PRINTCENTER, FetchTranslation("c4events.countdown.message"), elapsedTime);
     }
 

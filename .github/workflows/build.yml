@@ -1,4 +1,4 @@
-name: "swiftly_c4eventsnew Compiler"
+name: "swiftly_c4events Compiler"
 
 on:
     push:
@@ -25,7 +25,7 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
               with:
-                  path: swiftly_c4eventsnew
+                  path: swiftly_c4events
                   submodules: recursive
 
             - name: Checkout Swiftly
@@ -40,7 +40,7 @@ jobs:
                   cd swiftly; mv plugin_files/scripting/* ..; cd ..
 
             - name: Build
-              working-directory: swiftly_c4eventsnew
+              working-directory: swiftly_c4events
               run: |
                   make
 
@@ -48,12 +48,12 @@ jobs:
               if: matrix.os == 'ubuntu-latest'
               uses: actions/upload-artifact@v3
               with:
-                  name: swiftly_c4eventsnew Plugin - Linux
-                  path: ${{ github.workspace }}/swiftly_c4eventsnew/output
+                  name: swiftly_c4events Plugin - Linux
+                  path: ${{ github.workspace }}/swiftly_c4events/output
 
             - name: Upload Files - Windows
               if: matrix.os == 'windows-latest'
               uses: actions/upload-artifact@v3
               with:
-                  name: swiftly_c4eventsnew Plugin - Windows
-                  path: ${{ github.workspace }}/swiftly_c4eventsnew/output
+                  name: swiftly_c4events Plugin - Windows
+                  path: ${{ github.workspace }}/swiftly_c4events/output
