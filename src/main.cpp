@@ -28,7 +28,7 @@ void TimerCallback() { // credits to blu (made some modifications)
 
     if (elapsedTime <= 10) {
         g_playerManager->SendMsg(HUD_PRINTCENTER, FetchTranslation("c4events.countdown.message"), elapsedTime);
-        print("Debug pentru 10 secunde (%d)", elapsedTime)
+        print("Debug pentru 10 secunde (%d)", elapsedTime);
     }
 
     elapsedTime--;
