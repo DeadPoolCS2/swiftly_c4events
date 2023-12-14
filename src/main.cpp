@@ -10,7 +10,7 @@ PlayerManager *g_playerManager = nullptr;
 Timers *timers = nullptr;
 
 unsigned long long timerid; // credits to blu
-int elapsedTime = 10; // credits to blu
+int elapsedTime = 10;
 
 void OnProgramLoad(const char *pluginName, const char *mainFilePath)
 {
@@ -20,15 +20,22 @@ void OnProgramLoad(const char *pluginName, const char *mainFilePath)
     config = new Configuration();
     timers = new Timers();
 }
- 
-void OnPluginStart()
-{
-
-}
 
 void TimerCallback() { // credits to blu (made some modifications)
-    g_playerManager->SendMsg(HUD_PRINTCENTER, FetchTranslation("c4events.countdown.message"), elapsedTime);
+    if (elapsedTime == 30) {
+        g_playerManager->SendMsg(HUD_PRINTTALK, FetchTranslation("c4events.secondschat.message"), elapsedTime);
+    }
+
+    if (elapsedTime == 20) {
+        g_playerManager->SendMsg(HUD_PRINTTALK, FetchTranslation("c4events.secondschat.message"), elapsedTime);
+    }
+
+    if (elapsedTime == 10) {
+        g_playerManager->SendMsg(HUD_PRINTCENTER, FetchTranslation("c4events.countdown.message"), elapsedTime);
+    }
+
     elapsedTime--;
+
     if (elapsedTime == 0) {
         timers->DestroyTimer(timerid);
     }
@@ -46,10 +53,10 @@ void OnBombDefused(Player *player, unsigned short site)
     g_playerManager->SendMsg(HUD_PRINTTALK, FetchTranslation("c4events.defuse.message"), player->GetName());
 }
 
-void Timer() // credits to blu
+void OnPluginStart()
 {
 
-} //
+}
 
 void OnPluginStop()
 {
