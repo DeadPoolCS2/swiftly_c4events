@@ -40,6 +40,7 @@ void TimerCallback() { // credits to blu (made some modifications)
 void OnBombPlanted(Player *player, unsigned short site)
 {
     g_playerManager->SendMsg(HUD_PRINTTALK, FetchTranslation("c4events.plant.message"), player->GetName());
+    print("C4 planted by %s\n", player->GetName());
     elapsedTime = server->cvars->GetConvarInt("mp_c4timer");
     timerid = timers->RegisterTimer(1000, TimerCallback);  
 }
