@@ -27,8 +27,7 @@ void TimerCallback() { // credits to blu (made some modifications)
     }
 
     if (elapsedTime <= 10) {
-        print("Debug pentru 10 secunde (%d) \n", elapsedTime);
-        g_playerManager->SendMsg(HUD_PRINTCENTER, FetchTranslation("c4events.countdown.message"), elapsedTime);
+        g_playerManager->SendMsg(HUD_PRINTTALK, FetchTranslation("c4events.secondschat.message"), elapsedTime);
     }
 
     elapsedTime--;
